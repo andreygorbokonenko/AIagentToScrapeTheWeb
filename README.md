@@ -26,6 +26,40 @@ curl -fsSL https://cdn.useanything.com/latest/installer.sh | sh
 After the command is executed, you should receive the following confirmation of installation in your terminal and AnythingLLM will be installed on your computer.
 ![image](https://github.com/user-attachments/assets/86b5b517-92f7-4552-a532-19d24e17655b)
 
-As shown in the terminal above, my installation path is 
-![image](https://github.com/user-attachments/assets/c14cd79c-b5a8-4d55-8f54-00cd4e00f98f)
+As shown in the terminal above, my installation path is /home/user/AnythingLLMDesktop. I will execute the "Start" file
+![image](https://github.com/user-attachments/assets/d4701c31-9e20-4978-b6a5-55106c686bc9)
+
+Congradulations, you are half way there!
+
+Now, lets install Ollama for model management and a model.
+
+You can simply go to https://ollama.com/ and click "Download"
+
+![image](https://github.com/user-attachments/assets/67e1c852-861d-4fb9-9f94-a5a4226d983b)
+
+Once again, I will select Linux Download as i am running a Linux Machine.
+
+![image](https://github.com/user-attachments/assets/969226a2-dbf7-496c-b994-23145027659f)
+
+You can simply copy BASH code below or get it from the website.
+
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+at the end of the installation, you will receive a message indicating successfull installation that will look something like below.
+
+![image](https://github.com/user-attachments/assets/6318ea3f-1210-4e52-8f74-8a2af17710a5)
+
+Now, let's go back to Ollama website and navigate to "Models" section. 
+
+![image](https://github.com/user-attachments/assets/c76c4f26-98b0-48cb-9f3b-fdc5cd6efb21)
+
+There are plenty of different model available here that you can deploy using ollama. I will use a small model for demonstration purposes, but you can branch out if you would like. Just note that larger models will require more RAM and/or VRAM. So choose something your machine can run. 
+
+I chose llama3.1 model with 8 bln parameters that is roughtly 4.9 GB. 
+
+
+
+
 
