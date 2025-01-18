@@ -92,4 +92,14 @@ You can go couple steps forward and read additional details about security and W
 
 **SECTION 5: Set up an agent to have internet access**
 
+Now, let's set up an agent and configure access to the internet. Go to the workspace settings and configure agent to use Ollama model as shown below.
+
+![image](https://github.com/user-attachments/assets/76f8d464-66f9-403d-a706-0a4f35e0e77e)
+
+After you have configured 
+
+![image](https://github.com/user-attachments/assets/036c76d4-5af5-4ec8-8a25-80a2edf6922a)
+
+
+
 
