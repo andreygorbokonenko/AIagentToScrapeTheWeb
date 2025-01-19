@@ -90,16 +90,36 @@ You can go couple steps forward and read additional details about security and W
 ![image](https://github.com/user-attachments/assets/cf147152-809b-45dc-8a77-af15dd2f4729)
 
 
+
 **SECTION 5: Set up an agent to have internet access**
 
 Now, let's set up an agent and configure access to the internet. Go to the workspace settings and configure agent to use Ollama model as shown below.
 
 ![image](https://github.com/user-attachments/assets/76f8d464-66f9-403d-a706-0a4f35e0e77e)
 
-After you have configured 
+After you have updated the agent settings, you will be able to configure it using the same button. Click the same button and configure the search engine and access to Web for the agent as shown below.  
 
 ![image](https://github.com/user-attachments/assets/036c76d4-5af5-4ec8-8a25-80a2edf6922a)
 
+For the web search to work, you will need to register a search engine with one of the search engine providers on the list. We will use Google Search Engine provider in this example. Click on the link to register an engine and proceed to your google account and create a new search engine.
 
+![image](https://github.com/user-attachments/assets/bb522123-5134-47d9-97cd-c4e4f5b2c958)
 
+You can now Preview or customize the engine you just registered. Go to Customize.
 
+![image](https://github.com/user-attachments/assets/e7e86713-16b6-45a2-be43-06325c343682)
+
+Here in the **Overview**, you will find the **"Search Engine ID"** in the **"Basic"** tab. Copy that engine id and paste into the AnythingLLM.
+You will also find the API key by going to the **"Programmatic Access"** tab.
+
+![image](https://github.com/user-attachments/assets/2662a7f8-814a-40c7-9fd0-f0fe03197eac)
+
+There you can **"Get a Key"**
+
+![image](https://github.com/user-attachments/assets/b377e468-13f0-42c4-8f89-5a9e64cb9cf5)
+
+Copy that key and paste it into the AnythingLLM as well. Then **"Save"** the changes.
+
+![image](https://github.com/user-attachments/assets/d656efcc-6271-41e3-ba60-9e9d88ce9d02)
+
+Congradulations!! You are good to go ahead and scrape websites using the agent you just configured! Use **"@agent"** in the chat to initialize the agent before your requests and you should be good to go!
