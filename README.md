@@ -1,125 +1,130 @@
-# AIagentToScrapeTheWeb
-Simple way to set up an open source AI agent to scrape the web.
+# AI Agent to Scrape the Web
 
-Here we will set up an agent that will be capable of scraping the web for us. All tools we will use are open source and free to use, which makes this simple solution for available to anyone. 
+This guide will walk you through setting up an open-source AI agent capable of scraping the web. All tools we will use are open-source and free, making this a simple and accessible solution for anyone.
 
-Tools we will use:
-1) Linux Machine
-1) AnythingLLM - a simple interface for a local model.
-2) 
+### Tools Required:
+1. **Linux Machine**
+2. [AnythingLLM](https://anythingllm.com/) - A simple interface for a local model.
+3. [Ollama](https://ollama.com/) - A model management tool.
+4. LLaMA model (for demonstration, we'll use the `llama3.1` model)
 
-**SECTION 1: Download and install AnythingLLM**
+---
 
-First, go to https://anythingllm.com/ and click **"Download for Desktop"** button
+## **Section 1: Install AnythingLLM**
+
+1. **Download AnythingLLM**  
+   Go to [AnythingLLM's download page](https://anythingllm.com/) and click the **"Download for Desktop"** button.
 
 ![image](https://github.com/user-attachments/assets/d0232931-5c31-493e-852f-8fd5484c7ae8)
 
-I am using Linux, so I will choose **"Download for Linux"**
+   - If you're using Linux, select **"Download for Linux"**.
+
 ![image](https://github.com/user-attachments/assets/9927c8f2-6b45-4b8d-8d7f-5b104286c435)
 
-I will make it simple and use the following scripts from the instructions given for Linux
+   - To keep it simple, I will use the following script from the instructions provided for Linux.
+
 ![image](https://github.com/user-attachments/assets/3b48c676-aedf-4e99-a93d-381ed4f39d98)
 
-You can simply copy the command below, or get it from the website.
+   - You can either copy the command below or obtain it directly from the website.
 
 ```bash
 curl -fsSL https://cdn.useanything.com/latest/installer.sh | sh
 ```
 
-After the command is executed, you should receive the following confirmation of installation in your terminal and AnythingLLM will be installed on your computer.
+   - Once the command is executed, you should see a confirmation of the installation in your terminal, indicating that AnythingLLM has been successfully installed on your computer.
 
 ![image](https://github.com/user-attachments/assets/86b5b517-92f7-4552-a532-19d24e17655b)
 
-As shown in the terminal above, my installation path is /home/user/AnythingLLMDesktop. I will execute the **"Start"** file
+   - As shown in the terminal above, the installation path is /home/user/AnythingLLMDesktop. Now, I will execute the **"Start"** file.
 
 ![image](https://github.com/user-attachments/assets/d4701c31-9e20-4978-b6a5-55106c686bc9)
 
-Congradulations, you are almost there!
+   - Congratulations, you're almost there!
 
-**SECTION 2: Download and install Ollama to manage LLM providers**
+## **Section 2: Download and Install Ollama for Managing LLM Providers**
 
-Now, lets install Ollama for model management and a model.
+   - Now, let's install Ollama to manage the model and its configurations.
 
-You can simply go to https://ollama.com/ and click **"Download"**
+   - Simply visit https://ollama.com/ and click **"Download"**
 
 ![image](https://github.com/user-attachments/assets/67e1c852-861d-4fb9-9f94-a5a4226d983b)
 
-Once again, I will select Linux Download as i am running a Linux Machine.
+   - Once again, I will select Linux Download since I am using a Linux machine.
 
 ![image](https://github.com/user-attachments/assets/969226a2-dbf7-496c-b994-23145027659f)
 
-You can simply copy BASH code below or get it from the website.
+   - You can either copy the BASH code below or get it directly from the website.
 
 ```bash
 curl -fsSL https://ollama.com/install.sh | sh
 ```
 
-at the end of the installation, you will receive a message indicating successfull installation that will look something like below.
+   - At the end of the installation, you should see a message indicating a successful installation, similar to the one below.
 
 ![image](https://github.com/user-attachments/assets/6318ea3f-1210-4e52-8f74-8a2af17710a5)
 
-**SECTION 3: Download and install llama model**
+## **Section 3: Download and Install the LLaMA Model**
 
-Now, let's go back to Ollama website and navigate to **"Models"** section. 
+   - Now, let's return to the Ollama website and navigate to the **"Models"** section.
 
 ![image](https://github.com/user-attachments/assets/c76c4f26-98b0-48cb-9f3b-fdc5cd6efb21)
 
-There are plenty of different model available here that you can deploy using ollama. I will use a small model for demonstration purposes, but you can branch out if you would like. Just note that larger models will require more RAM and/or VRAM. So choose something your machine can run. 
+   - There are many different models available here that you can deploy using Ollama. For demonstration purposes, I will use a smaller model, but feel free to explore other options. Keep in mind that larger models may require more RAM and/or VRAM, so choose one that your machine can handle.
 
-I chose **llama3.1** model with 8 bln parameters that is roughtly 4.9 GB. 
+   - I’ve chosen the **llama3.1** model with 8 billion parameters, which is approximately 4.9 GB in size.
 
 ![image](https://github.com/user-attachments/assets/102f73c7-dd73-45a6-b365-fd3d9f7131d5)
 
-As always you can just copy the command below or get it from the website yourself.
+   - As always, you can either copy the command below or obtain it directly from the website.
 
 ```bash
 ollama run llama3.1
 ```
-As you run the command in your terminal, Ollama will download the model if it is not yet available and complete all necessary configurations and start the model. You can start interacting with the model through your terminal if you wish. However, we will go to the next step and configure AnythingLLM to work with the model instead.
+   - When you run the command in your terminal, Ollama will download the model (if it's not already available), complete the necessary configurations, and start the model. You can interact with the model directly through your terminal if you wish. However, in the next step, we will configure AnythingLLM to work with the model instead.
 
 ![image](https://github.com/user-attachments/assets/8115458d-a50d-4321-9df9-5e73634d5c7c)
 
-**SECTION 4: Configure AnythingLLM to work with Ollama**
+## **    Section 4: Configure AnythingLLM to Work with Ollama**
 
-Now, lets go back to AnythingLLM and configure it to use Ollama model we just installed. Simply select Ollama from the list of available LLM providers and you will notice that the model will show up automatically. Alternatively, you can select a model if you have multiple models installed.
+   - Now, let's return to AnythingLLM and configure it to use the Ollama model we just installed. Simply select Ollama from the list of available LLM providers, and the model should appear automatically. If you have multiple models installed, you can choose the one you want to use.
 
 ![image](https://github.com/user-attachments/assets/92d65c7b-5c8d-4c66-b66c-22a04bd5b4e8)
 
-You can go couple steps forward and read additional details about security and Workspaces. You will be asked to enter a name for a workspace that will be created for you. At the end of the process you will end up  with a fully functional alternative to ChatGPT on your own computer! You can use it without Internet Access!!
+   - You can take a few additional steps to review details about security and Workspaces. During the process, you'll be prompted to enter a name for the workspace that will be created. Once completed, you'll have a fully functional alternative to ChatGPT running on your own computer—ready for offline use!
 
 ![image](https://github.com/user-attachments/assets/cf147152-809b-45dc-8a77-af15dd2f4729)
 
 
 
-**SECTION 5: Set up an agent to have internet access**
+## **Section 5: Set Up an Agent with Internet Access**
 
-Now, let's set up an agent and configure access to the internet. Go to the workspace settings and configure agent to use Ollama model as shown below.
+   - Now, let's set up an agent and configure it for internet access. Go to the workspace settings and configure the agent to use the Ollama model, as shown below.
 
 ![image](https://github.com/user-attachments/assets/76f8d464-66f9-403d-a706-0a4f35e0e77e)
 
-After you have updated the agent settings, you will be able to configure it using the same button. Click the same button and configure the search engine and access to Web for the agent as shown below.  
+   - Once you’ve updated the agent settings, you can configure it further using the same button. Click the button again to configure the search engine and enable web access for the agent, as shown below.
 
 ![image](https://github.com/user-attachments/assets/036c76d4-5af5-4ec8-8a25-80a2edf6922a)
 
-For the web search to work, you will need to register a search engine with one of the search engine providers on the list. We will use Google Search Engine provider in this example. Click on the link to register an engine and proceed to your google account and create a new search engine.
+   - For the web search to function, you'll need to register a search engine with one of the providers listed. In this example, we will use the Google Search Engine provider. Click the link to register a new engine, then proceed to your Google account to create a new search engine.
 
 ![image](https://github.com/user-attachments/assets/bb522123-5134-47d9-97cd-c4e4f5b2c958)
 
-You can now Preview or customize the engine you just registered. Go to Customize.
+   - You can now preview or customize the engine you just registered. Simply go to the **"Customize"** section.
 
 ![image](https://github.com/user-attachments/assets/e7e86713-16b6-45a2-be43-06325c343682)
 
-Here in the **Overview**, you will find the **"Search Engine ID"** in the **"Basic"** tab. Copy that engine id and paste into the AnythingLLM.
-You will also find the API key by going to the **"Programmatic Access"** tab.
+   - In the Overview section, you'll find the **"Search Engine ID"** under the **"Basic"** tab. Copy that ID and paste it into AnythingLLM.
+   - You can also find the API key under the **"Programmatic Access"** tab.
 
 ![image](https://github.com/user-attachments/assets/2662a7f8-814a-40c7-9fd0-f0fe03197eac)
 
-There you can **"Get a Key"**
+   - From there, you can click **"Get a Key"** to obtain the API key.
 
 ![image](https://github.com/user-attachments/assets/b377e468-13f0-42c4-8f89-5a9e64cb9cf5)
 
-Copy that key and paste it into the AnythingLLM as well. Then **"Save"** the changes.
+   - Copy the API key and paste it into AnythingLLM. Then, click **"Save"** to apply the changes.
 
 ![image](https://github.com/user-attachments/assets/d656efcc-6271-41e3-ba60-9e9d88ce9d02)
 
-Congradulations!! You are good to go ahead and scrape websites using the agent you just configured! Use **"@agent"** in the chat to initialize the agent before your requests and you should be good to go!
+   - Congratulations! You’re all set to scrape websites using the agent you just configured! Simply use **"@agent"** in the chat to initialize the agent before making your requests, and you’re good to go!
