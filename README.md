@@ -17,7 +17,7 @@ This guide will walk you through setting up an open-source AI agent capable of s
 
 ![image](https://github.com/user-attachments/assets/d0232931-5c31-493e-852f-8fd5484c7ae8)
 
-   - If you're using Linux, select **"Download for Linux"**.
+   - If you're using Linux, select **"Download for Linux"**. 
 
 ![image](https://github.com/user-attachments/assets/9927c8f2-6b45-4b8d-8d7f-5b104286c435)
 
